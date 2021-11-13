@@ -238,14 +238,65 @@
 										<div class="resume-timeline-item-header mb-2">
 											<div class="d-flex flex-column flex-md-row">
 												<h3 class="resume-position-title font-weight-bold mb-1">PipeDevice</h3>
-												<div class="resume-company-name ms-auto">Completed</div>
+												<div class="resume-company-name ms-auto">Completed (Cooperated with Microsoft Asia)</div>
 											</div><!--//row-->
 											<div class="resume-position-time">A hardware-software co-design approach to intra-host container communication</div>
 										</div><!--//resume-timeline-item-header-->
 										<div class="resume-timeline-item-desc">
-											<p>Research on Big Data Analytics and Datacenter Netwroking</p>									
+											<p>
+												Containers have become prevalent in public clouds due to the performance, portability, and deployment benefits compared
+												to virtual machines. Containerized applications often entail extensive bulky data transfers to exchange intermediate 
+												results of data processing among peers. Examples
+												include the shuffle stage in MapReduce jobs and the model update process with parameter server and
+												allreduce in distributed machine learning.
+												<br/>
+												Moreover, it is increasingly common for these bulky transfers to occur in the intra-host scenario. With the server machines becoming more resourceful in terms of CPU cores
+												and memory, hundreds of containers can reside on the same server. Cloud operators also tend to consolidate a tenant’s
+												containers to as few servers as possible in order to improve performance and management efficiency.
+												For example, Spark distributes mappers and reducers in multiple containers that may 
+												co-locates at the same server; Kubernetes launchs multiple containers inside a Pod where each Pod resides in a physical or virtual machine 
+												in the cluster, and multiple Pods may also co-locate on the same machine.
+												As a result, PipeDevice focuses on bulky transfers in intra-host container communication which is relatively less explored in the community.
+												<br/>
+												Containers rely on the host TCP/IP stack which is well-known to incur high CPU overheads in data centers. 
+												To reduce such overheads, PipeDevice exploits FPGA accelerators that have
+												already been connected to each server in the cloud to forward
+												data across co-located containers, effectively creating a
+												device that facilitates a communication pipe for them, without
+												introducing new hardware deployment cost. PipeDevice relies
+												on hardware offloading: each socket is allocated dedicated
+												memory out of a hugepage region in the hypervisor, and application
+												data in the socket buffer is directly accessed by the
+												FPGA’s DMA engine and copied to the destination memory
+												address. This eliminates the overheads of 1) copy between
+												user and kernel spaces and 2) TCP stack. Further, PipeDevice
+												keeps the connection states in host DRAM and manages them
+												entirely in software, so that data copy is performed by hardware
+												in a stateless manner. This eliminates contention of the
+												hardware resources and resolves the connection scalability issue.
+												<br/>
+												Therefore, PipeDevice represents a general hardware-software co-design approach
+												that is deployable in today’s public clouds. It is entirely possible that PipeDevice’s hardware
+												functionality be implemented on other hardware, such
+												as programmable NICs (SmartNICs) and RDMA NICs.
+												
+											</p>									
 										</div><!--//resume-timeline-item-desc-->
-	
+										<h4 class="resume-timeline-item-desc-heading font-weight-bold">My Contributions</h4>
+										    <p>
+												Role: The architect of the whole system; the 1st committer.
+												<br/>
+												Technical contributions: 
+												<br/>
+												1) Propose new solutions to low-overhead intra-host container communication in public clouds;
+												<br/>
+												2) Design the system architecture and key abstractions to applications;
+												<br/>
+												3) Implement the host-side modules, e.g., the communication library and the kernel driver 
+												that manages the host resources and communicates with hardware;
+												<br/>
+												4) Implement a network function chain based on PipeDevice, which demonstrates its benefits.
+											</p>
 									</article><!--//resume-timeline-item-->
 	
 									
@@ -273,8 +324,7 @@
 												deploy optimized network stack extensions for tenants, although many such implementations
 												are available (e.g., scalability and zero-copy datapath). Therefore, from a philosophical standpoint it is worth 
 												asking: Is there a better way to provision the network stack in public clouds, to make life easier for both tenant and provider?
-											</p>
-											<p>
+												<br/>
 												NetKernel provides a new paradigm: <b>network stack as a service in the cloud</b>.
 												It uses use network APIs such as standard BSD sockets as a
 												better abstraction boundary between the tenant and provider, 
@@ -287,11 +337,14 @@
 												NetKernel improves network management efficiency for operator, and provides deployment and 
 												performance gains for users.
 											</p>
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">My contributions</h4>
-										    <p>Role: one of the architects of the whole system; the 2nd committer.</p>									
-											<p>
-												Technical contributions: 1) Develop a testbed that uses kernel TCP/IP stack and mTCP as 
-												two network stack modules (NSMs); 2) Implement the key forwarding module named CoreEngine, 
+										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">My Contributions</h4>
+										    <p>
+												Role: one of the architects of the whole system; the 2nd committer.
+												<br/>
+												Technical contributions: 
+												<br/>1) Develop a testbed that uses kernel TCP/IP stack and mTCP as 
+												two network stack modules (NSMs); 
+												<br/>2) Implement the key forwarding module named CoreEngine, 
 												which quickly switches the traffic between guest VM and NSMs.
 											</p>
 										</div>
