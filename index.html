@@ -271,22 +271,29 @@
 												poses significant challenges to many management tasks and degrades the efficiency of running
 												the cloud network fabric. Even with sufficient resources and expertise the provider cannot
 												deploy optimized network stack extensions for tenants, although many such implementations
-												are available (e.g., scalability and zero-copy datapath).
+												are available (e.g., scalability and zero-copy datapath). Therefore, from a philosophical standpoint it is worth 
+												asking: Is there a better way to provision the network stack in public clouds, to make life easier for both tenant and provider?
 											</p>
 											<p>
-												NetKernel
+												NetKernel provides a new paradigm: <b>network stack as a service in the cloud</b>.
+												It uses use network APIs such as standard BSD sockets as a
+												better abstraction boundary between the tenant and provider, 
+												and allows us to decouple the network
+												stack from the guest OS, offering it as an independent service by the provider. Packets
+												are handled outside the tenant VM in a network stack module (NSM) given by the provider,
+												whose design and implementation are transparent to tenants. Tenants just use the network
+												stack by invoking the APIs, while the provider does all the heavy lifting and may charge a
+												fee to recover the cost of additional resources and service.
+												NetKernel improves network management efficiency for operator, and provides deployment and 
+												performance gains for users.
 											</p>
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements</h4>
-										    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
-										    <ul class="list-inline">
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">React</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Redux</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Django</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Webpack</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">HTML/SASS</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">MySQL</span></li>
-										    </ul>									
+										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">My contributions</h4>
+										    <p>Role: one of the architects of the whole system; the 2nd committer.</p>									
+											<p>
+												Technical contributions: 1) Develop a testbed that uses kernel TCP/IP stack and mTCP as 
+												two network stack modules (NSMs); 2) Implement the key forwarding module named CoreEngine, 
+												which quickly switches the traffic between guest VM and NSMs.
+											</p>
 										</div>
 	
 									</article>
