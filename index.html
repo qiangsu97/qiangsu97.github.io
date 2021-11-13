@@ -240,7 +240,7 @@
 												<h3 class="resume-position-title font-weight-bold mb-1">PipeDevice</h3>
 												<div class="resume-company-name ms-auto">Completed</div>
 											</div><!--//row-->
-											<div class="resume-position-time">A Hardware-Software Co-Design Approach to Intra-Host Container Communication</div>
+											<div class="resume-position-time">A hardware-software co-design approach to intra-host container communication</div>
 										</div><!--//resume-timeline-item-header-->
 										<div class="resume-timeline-item-desc">
 											<p>Research on Big Data Analytics and Datacenter Netwroking</p>									
@@ -256,14 +256,67 @@
 												<h3 class="resume-position-title font-weight-bold mb-1">NetKernel</h3>
 												<div class="resume-company-name ms-auto">Completed</div>
 											</div>
-											<div class="resume-position-time">A system that decouples the
-												network stack from the guest VM and offers it as an independent module.</div>
+											<div class="resume-position-time">A system that decouples the network stack from the guest VM and offers it as an independent module.</div>
 										</div>
 										<div class="resume-timeline-item-desc">
-											<p>Research</p>									
+											<p>
+												In today's public clouds, the virtual NIC (vNIC) is the key abstraction boundary between the tenants and the provider. 
+												Then the tenant runs a full network stack of its own within the virtual machine (VM), and the provider is responsible 
+												for allocating resources across VMs, and managing the network fabric.
+												Yet the vNIC-centric paradigm suffers from two fundamental limitations and is facing increasingly difficult challenges:
+												1) The task of maintaining the network stack falls largely under the responsibility of tenants. This is tedious and difficult 
+												given the intricacy of network stack implementation (e.g., mTCP and kernel TCP/IP) and the velocity of new feature 
+												development (e.g., new congestion control algorithm). We believe that none of the above should fall upon the tenant in most usage scenarios.
+												2) The provider has almost zero visibility and control of the network stack. This
+												poses significant challenges to many management tasks and degrades the efficiency of running
+												the cloud network fabric. Even with sufficient resources and expertise the provider cannot
+												deploy optimized network stack extensions for tenants, although many such implementations
+												are available (e.g., scalability and zero-copy datapath).
+											</p>
+											<p>
+												NetKernel
+											</p>
+										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements</h4>
+										    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
+										    <ul class="list-inline">
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">React</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Redux</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Django</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Webpack</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">HTML/SASS</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">MySQL</span></li>
+										    </ul>									
 										</div>
 	
 									</article>
+
+									<!--
+								    <article class="resume-timeline-item position-relative pb-5">
+									    
+									    <div class="resume-timeline-item-header mb-2">
+										    <div class="d-flex flex-column flex-md-row">
+										        <h3 class="resume-position-title font-weight-bold mb-1">Senior Software Developer</h3>
+										        <div class="resume-company-name ms-auto">Google</div>
+										    </div>
+										    <div class="resume-position-time">2016 - 2020</div>
+									    </div>
+									    <div class="resume-timeline-item-desc">
+										    <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.</p>
+										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements</h4>
+										    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
+										    <ul class="list-inline">
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">React</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Redux</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Django</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Webpack</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">HTML/SASS</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">MySQL</span></li>
+										    </ul>
+									    </div>
+
+								    </article>
 								
 									
 								</div><!--//resume-timeline-->
